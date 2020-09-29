@@ -22,4 +22,12 @@ public class UserRegistrationMainTest
         assertFalse(user.validateFirstName("shubham"));
         assertFalse(user.validateFirstName("Sh"));
     }
+    @Test
+    public void validateLastNameTest()
+    {
+        assertTrue(user.validateLastName("Kumar"));
+        assertTrue(user.validateLastName("Kum"));
+        assertFalse(user.validateLastName("Ku"));
+        assertFalse(user.validateLastName("kumar"));
+    }
 }

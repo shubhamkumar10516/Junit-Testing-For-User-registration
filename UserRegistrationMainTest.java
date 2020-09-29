@@ -54,8 +54,8 @@ public class UserRegistrationMainTest
     public void validatePasswordTest()
     {
     	assertFalse(user.validatePassword(" "));
-        assertTrue(user.validatePassword("abcqwerF12"));
-        assertTrue(user.validatePassword("Kumar5qwert"));
+        assertTrue(user.validatePassword("abcqwerF12@"));
+        assertTrue(user.validatePassword("Kumar5qwert#"));
         assertFalse(user.validatePassword("ABCDEFGI"));
         assertFalse(user.validatePassword("Ku"));
         assertFalse(user.validatePassword("kumar"));

@@ -2,20 +2,20 @@ package com.bridgeLab.userReg;
 
 public class UserRegistrationMain {
 
-    public static boolean validateFirstName(String fname) {
+    public  boolean validateFirstName(String fname) {
     	
     	String pattern = "[A-Z]{1}[a-zA-Z]{2,}";
     	
     	return fname.matches(pattern);
     }
-    public static boolean validateLastName(String lname) {
+    public  boolean validateLastName(String lname) {
     	
 		String pattern = "[A-Z]{1}[a-zA-Z]{2,}";
     	
     	return lname.matches(pattern);
     }
     
-    public static boolean validateEmail(String email) {
+    public  boolean validateEmail(String email) {
 		
 		
 		
@@ -23,14 +23,14 @@ public class UserRegistrationMain {
 		String  pattern = "^([a-zA-Z0-9\\.-_]+)@([a-zA-Z]{2,})\\.([a-zA-Z]{2,8})(\\.[a-z]{2,8})?$";
 		return email.matches(pattern);
 	}
-    public static boolean validateMobile(String mobNo) {
+    public  boolean validateMobile(String mobNo) {
 		
 		String pattern = "[0-9]{2}[ ][0-9]{10}";
 		return mobNo.matches(pattern);
 
 	}
     
-   public static boolean validatePassword(String password) {
+   public  boolean validatePassword(String password) {
 		
 		String pattern = "^(?=.*[A-Z])(?=.*[0-9])(?=.*[a-z]).{8,}$";
 		return password.matches(pattern);

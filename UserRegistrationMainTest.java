@@ -30,4 +30,14 @@ public class UserRegistrationMainTest
         assertFalse(user.validateLastName("Ku"));
         assertFalse(user.validateLastName("kumar"));
     }
+    
+    @Test
+    public void validateEmailTest()
+    {
+        assertTrue(user.validateEmail("shubham.kum@gmail.co.in"));
+        assertFalse(user.validateEmail("sh12.kum1@12cap.com"));
+        assertFalse(user.validateEmail("shu.kuma@.com"));
+        assertFalse(user.validateEmail("123sonu@gmail.com"));
+    }
+    
 }

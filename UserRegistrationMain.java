@@ -14,4 +14,13 @@ public class UserRegistrationMain {
     	
     	return lname.matches(pattern);
     }
+    
+    public static boolean validateEmail(String email) {
+		
+		
+		
+		String pattern = "^([a-zA-Z]+[a-zA-Z._0-9]*[a-zA-Z0-9]+)[@]([a-zA-Z]{2,}[.][a-zA-Z]{2,}[.][a-zA-Z]{2,})$";
+       
+		return email.matches(pattern);
+	}
 }

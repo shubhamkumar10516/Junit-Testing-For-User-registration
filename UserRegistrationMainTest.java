@@ -34,10 +34,13 @@ public class UserRegistrationMainTest
     @Test
     public void validateEmailTest()
     {
-    	assertTrue(user.validateEmail("shubham.kum@gmail.com"));
-        assertTrue(user.validateEmail("shubham.kum@gmail.co.in"));
-        assertFalse(user.validateEmail("sh12.kum1@12cap.com"));
-        assertFalse(user.validateEmail("shu.kuma@.com"));
+    	assertTrue(user.validateEmail("abc@yahoo.com"));
+        assertTrue(user.validateEmail("abc-100@yahoo.com"));
+        assertTrue(user.validateEmail("abc.100@yahoo.com"));
+        assertTrue(user.validateEmail("abc111@abc.com"));
+        assertTrue(user.validateEmail("abc-100@abc.net"));
+        assertTrue(user.validateEmail("abc.100@abc.com.au"));
+        
         assertTrue(user.validateEmail("123sonu@gmail.com"));
     }
     

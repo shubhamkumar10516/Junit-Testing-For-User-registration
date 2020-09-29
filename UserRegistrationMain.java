@@ -20,7 +20,7 @@ public class UserRegistrationMain {
 		
 		
 		//String //pattern = "^([a-zA-Z]+[a-zA-Z._0-9]*[a-zA-Z0-9]+)[@]([a-zA-Z]{2,}[.][a-zA-Z]{2,}[.][a-zA-Z]{2,})$";
-		String  pattern = "^([a-zA-Z0-9\\.-_]+)@([a-zA-Z]{2,})\\.([a-zA-Z]{2,8})(\\.[a-z]{2,8})?$";
+		String  pattern = "^([a-zA-Z0-9\\.\\-_+]+)@([a-zA-Z]{2,})\\.([a-zA-Z]{2,8})(\\.[a-z]{2,8})?$";
 		return email.matches(pattern);
 	}
     public static boolean validateMobile(String mobNo) {

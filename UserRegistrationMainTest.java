@@ -34,10 +34,20 @@ public class UserRegistrationMainTest
     @Test
     public void validateEmailTest()
     {
+    	assertTrue(user.validateEmail("shubham.kum@gmail.com"));
         assertTrue(user.validateEmail("shubham.kum@gmail.co.in"));
         assertFalse(user.validateEmail("sh12.kum1@12cap.com"));
         assertFalse(user.validateEmail("shu.kuma@.com"));
-        assertFalse(user.validateEmail("123sonu@gmail.com"));
+        assertTrue(user.validateEmail("123sonu@gmail.com"));
+    }
+    
+    @Test
+    public void validateMobileTest()
+    {
+    	assertTrue(user.validateMobile("91 2345678910"));
+        assertFalse(user.validateMobile("9 1234567890"));
+        assertFalse(user.validateMobile("9987654312"));
+        assertFalse(user.validateMobile("+91 8765432345"));
     }
     
 }

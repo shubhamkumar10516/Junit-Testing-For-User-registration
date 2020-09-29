@@ -32,7 +32,7 @@ public class UserRegistrationMain {
     
    public static boolean validatePassword(String password) {
 		
-		String pattern = "^(?=.*[A-Z])(?=.*[a-z]).{8,}$";
+		String pattern = "^(?=.*[A-Z])(?=.*[0-9])(?=.*[a-z]).{8,}$";
 		return password.matches(pattern);
 	}
 }

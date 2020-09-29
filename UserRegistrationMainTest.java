@@ -50,4 +50,15 @@ public class UserRegistrationMainTest
         assertFalse(user.validateMobile("+91 8765432345"));
     }
     
+    @Test
+    public void validatePasswordTest()
+    {
+        assertTrue(user.validatePassword("abcqwerf"));
+        assertTrue(user.validatePassword("Kumarqwert"));
+        assertFalse(user.validatePassword("Ku"));
+        assertFalse(user.validatePassword("kumar"));
+    }
+    
+    
+    
 }

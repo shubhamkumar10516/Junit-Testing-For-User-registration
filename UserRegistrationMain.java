@@ -29,4 +29,10 @@ public class UserRegistrationMain {
 		return mobNo.matches(pattern);
 
 	}
+    
+   public static boolean validatePassword(String password) {
+		
+		String pattern = "^[a-zA-Z]{8,}$";
+		return password.matches(pattern);
+	}
 }

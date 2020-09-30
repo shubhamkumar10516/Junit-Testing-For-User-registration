@@ -2,12 +2,29 @@ package com.bridgeLab.userReg;
 
 public class UserRegistrationMain {
 
+	public String analyseMood(String mood) {
+		
+		if(mood.contains("sad")) 
+			return "SAD";
+	    return "HAPPY";
+	}
+	
+	public String checkException(String str) {
+		
+		try {
+			
+			return analyseMood(str);
+		}catch(NullPointerException e) {
+			return "Happy";
+		}
+	}
     public  boolean validateFirstName(String fname) {
     	
     	String pattern = "[A-Z]{1}[a-zA-Z]{2,}";
     	
     	return fname.matches(pattern);
     }
+    
     public  boolean validateLastName(String lname) {
     	
 		String pattern = "[A-Z]{1}[a-zA-Z]{2,}";
@@ -20,7 +37,7 @@ public class UserRegistrationMain {
 		
 		
 		//String //pattern = "^([a-zA-Z]+[a-zA-Z._0-9]*[a-zA-Z0-9]+)[@]([a-zA-Z]{2,}[.][a-zA-Z]{2,}[.][a-zA-Z]{2,})$";
-		String  pattern = "^([a-zA-Z0-9\\.\\-_+]+)@([a-zA-Z]{2,})\\.([a-zA-Z]{2,8})(\\.[a-z]{2,8})?$";
+		String  pattern = "^([a-z][a-zA-Z0-9\\.\\-_+]+[a-zA-Z0-9\\-_+])@([a-zA-Z0-9]{1,})\\.([a-zA-Z]{2,8})(\\.[a-z]{2,8})?$";
 		return email.matches(pattern);
 	}
     public  boolean validateMobile(String mobNo) {

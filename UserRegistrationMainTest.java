@@ -5,6 +5,8 @@ import static org.junit.Assert.*;
 import org.junit.Before;
 import org.junit.Test;
 
+import com.bridgeLab.userReg.InvalidUserException.Exception_type;
+
 
 public class UserRegistrationMainTest 
 {
@@ -17,53 +19,51 @@ public class UserRegistrationMainTest
     @Test
     public void validateFirstNameTest()
     {
-        assertTrue(user.validateFirstName("Shubham"));
-        assertTrue(user.validateFirstName("Shu"));
-        assertFalse(user.validateFirstName("shubham"));
-        assertFalse(user.validateFirstName("Sh"));
+    	
+        try {
+        	user.validateFirstName("Shubham");
+        }catch(InvalidUserException e) {
+        	assertEquals(Exception_type.FIRST_NAME_TYPE, e.type);
+        }
+    	
     }
     @Test
     public void validateLastNameTest()
     {
-        assertTrue(user.validateLastName("Kumar"));
-        assertTrue(user.validateLastName("Kum"));
-        assertFalse(user.validateLastName("Ku"));
-        assertFalse(user.validateLastName("kumar"));
+    	try {
+        	user.validateFirstName("Kumar");
+        }catch(InvalidUserException e) {
+        	assertEquals(Exception_type.LAST_NAME_TYPE, e.type);
+        }
     }
     
     @Test
     public void validateEmailTest()
     {
-    	assertTrue(user.validateEmail("abc@yahoo.com"));
-        assertTrue(user.validateEmail("abc-100@yahoo.com"));
-        assertTrue(user.validateEmail("abc.100@yahoo.com"));
-        assertTrue(user.validateEmail("abc111@abc.com"));
-        assertTrue(user.validateEmail("abc-100@abc.net"));
-        assertTrue(user.validateEmail("abc.100@abc.com.au"));
-        
-        assertTrue(user.validateEmail("123sonu@gmail.com"));
+    	try {
+    	    user.validateEmail("abc@yahoo.com");
+    	}catch(InvalidUserException e) {
+    		assertEquals(Exception_type.EMAIL_TYPE, e.type);
+    	}
     }
     
     @Test
     public void validateMobileTest()
     {
-    	assertTrue(user.validateMobile("91 2345678910"));
-        assertFalse(user.validateMobile("9 1234567890"));
-        assertFalse(user.validateMobile("9987654312"));
-        assertFalse(user.validateMobile("+91 8765432345"));
+    	try {
+    		user.validateMobile("91 2345678910");
+    	}catch(InvalidUserException e) {
+    		assertEquals(Exception_type.MOBILE_NO_TYPE, e.type);
+    	}
     }
     
     @Test
     public void validatePasswordTest()
     {
-    	assertFalse(user.validatePassword(" "));
-        assertTrue(user.validatePassword("abcqwerF12@"));
-        assertTrue(user.validatePassword("Kumar5qwert#"));
-        assertFalse(user.validatePassword("ABCDEFGI"));
-        assertFalse(user.validatePassword("Ku"));
-        assertFalse(user.validatePassword("kumar"));
+    	try {
+    	    user.validatePassword("abcqwerF12@");
+    	}catch(InvalidUserException e) {
+    		assertEquals(Exception_type.PASSWORD_TYPE, e.type);
+    	}
     }
-    
-    
-    
 }

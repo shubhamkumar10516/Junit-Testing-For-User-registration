@@ -8,6 +8,8 @@ import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.junit.runners.Parameterized;
 
+import com.bridgeLab.userReg.InvalidUserException.Exception_type;
+
 @RunWith(Parameterized.class)
 public class EmailValidationTest {
 
@@ -33,6 +35,8 @@ public class EmailValidationTest {
 			{"abc+100@gmail.com", true},
 			{"abc@.com.my", false},
 			{"abc123@gmail.a", false},
+			{"abc@abc@gmail.com", false},
+			{" abc@%*.com", false},
 			{"abc123@.com", false},
 			{"abc123@.com.com", false},
 			{".abc@abc.com", false},
@@ -48,7 +52,12 @@ public class EmailValidationTest {
 	@Test
 	public void testEmailValidationtest() {
 		UserRegistrationMain validateUser = new UserRegistrationMain();
-		boolean result = validateUser.validateEmail(this.email);
-		Assert.assertEquals(expectedOp, result);
+		//boolean result = 
+		try {
+		    validateUser.validateEmail(this.email);
+		}catch(InvalidUserException e) {
+			Assert.assertEquals(Exception_type.EMAIL_TYPE, e.type);
+		}
+		//Assert.assertEquals(expectedOp, result);
 	}
 }

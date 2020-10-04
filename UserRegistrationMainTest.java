@@ -21,7 +21,7 @@ public class UserRegistrationMainTest
     {
     	
         try {
-        	user.validateFirstName("Shubham");
+        	user.uFirstName.validate("Shubham");
         }catch(InvalidUserException e) {
         	assertEquals(Exception_type.FIRST_NAME_TYPE, e.type);
         }
@@ -31,7 +31,7 @@ public class UserRegistrationMainTest
     public void validateLastNameTest()
     {
     	try {
-        	user.validateFirstName("Kumar");
+        	user.uLastName.validate("Kumar");
         }catch(InvalidUserException e) {
         	assertEquals(Exception_type.LAST_NAME_TYPE, e.type);
         }
@@ -41,7 +41,7 @@ public class UserRegistrationMainTest
     public void validateEmailTest()
     {
     	try {
-    	    user.validateEmail("abc@yahoo.com");
+    	    user.validateEmail.validate("abc@yahoo.com");
     	}catch(InvalidUserException e) {
     		assertEquals(Exception_type.EMAIL_TYPE, e.type);
     	}
@@ -51,7 +51,7 @@ public class UserRegistrationMainTest
     public void validateMobileTest()
     {
     	try {
-    		user.validateMobile("91 2345678910");
+    		user.validateMobile.validate("91 2345678910");
     	}catch(InvalidUserException e) {
     		assertEquals(Exception_type.MOBILE_NO_TYPE, e.type);
     	}
@@ -61,7 +61,7 @@ public class UserRegistrationMainTest
     public void validatePasswordTest()
     {
     	try {
-    	    user.validatePassword("abcqwerF12@");
+    	    user.validatePassword.validate("abcqwerF12@");
     	}catch(InvalidUserException e) {
     		assertEquals(Exception_type.PASSWORD_TYPE, e.type);
     	}

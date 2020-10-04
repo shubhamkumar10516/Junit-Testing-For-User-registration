@@ -54,7 +54,7 @@ public class EmailValidationTest {
 		UserRegistrationMain validateUser = new UserRegistrationMain();
 		//boolean result = 
 		try {
-		    validateUser.validateEmail(this.email);
+		    validateUser.validateEmail.validate(this.email);
 		}catch(InvalidUserException e) {
 			Assert.assertEquals(Exception_type.EMAIL_TYPE, e.type);
 		}
